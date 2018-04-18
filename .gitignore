@@ -1,0 +1,5 @@
+/node_modules
+/.vscode
+/index.d.ts
+/index.js
+/index.js.map

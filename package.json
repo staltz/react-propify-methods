@@ -1,0 +1,30 @@
+{
+  "name": "react-propify-methods",
+  "version": "1.0.0",
+  "description": "A React utility to convert instance methods to props with Observables",
+  "main": "index.js",
+  "typings": "index.d.ts",
+  "scripts": {
+    "compile": "tsc",
+    "test": "tape test.js",
+    "prepublishOnly": "npm run compile"
+  },
+  "author": "staltz.com",
+  "license": "MIT",
+  "dependencies": {
+    "@types/react": ">=16.3.0",
+    "symbol-observable": "^1.2.0",
+    "react": ">=16.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.30",
+    "callbag-interval": "^1.0.0",
+    "callbag-map": "^1.0.1",
+    "callbag-pipe": "^1.1.1",
+    "callbag-take": "^1.0.0",
+    "callbag-to-obs": "^1.0.0",
+    "tape": "^4.8.0",
+    "typescript": "2.8.x",
+    "react-test-renderer": "^16.0.0"
+  }
+}
