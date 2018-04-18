@@ -10,7 +10,7 @@ A utility function (higher-order component, 'HOC') that takes a React component 
 
 ## What problem this package solves
 
-Let's say you have a React component that has instance methods, for instance from React Native we know that `TextInput` has the `clear()` method:
+Let's say you have a React component that has instance methods, for example from React Native we know that `TextInput` has the `clear()` method:
 
 ```jsx
 <TextInput
