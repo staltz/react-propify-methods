@@ -1,6 +1,6 @@
 {
   "name": "react-propify-methods",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A React utility to convert instance methods to props with Observables",
   "main": "index.js",
   "typings": "index.d.ts",
