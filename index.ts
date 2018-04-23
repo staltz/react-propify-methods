@@ -1,7 +1,6 @@
 import {
   Component,
   createElement,
-  createRef,
   RefObject,
   ComponentClass as CClass,
 } from 'react';
@@ -18,7 +17,7 @@ export function propifyMethods<P, K extends keyof P, M extends K>(
   const PMC: CClass<any> = class extends Component<any> {
     constructor(props: any) {
       super(props);
-      this.ref = createRef();
+      this.ref = null as any;
       this.subscriptions = {};
     }
 
@@ -39,6 +38,7 @@ export function propifyMethods<P, K extends keyof P, M extends K>(
           const observable = props[streamName];
           subscriptions[name] = observable.subscribe({
             next: (args: Array<any>) => {
+              if (!this.ref) return;
               const [instance, method] = this.getInstanceAndMethod(name);
               if (!method) return;
               if (Array.isArray(args)) {
@@ -63,8 +63,10 @@ export function propifyMethods<P, K extends keyof P, M extends K>(
     }
 
     render() {
-      const props = { ...(this.props as any), ref: this.ref };
-      return createElement(Comp, props, props.children);
+      return createElement(Comp, {
+        ...(this.props as any),
+        ref: (r: RefObject<typeof Comp>) => {this.ref = r},
+      }, this.props.children);
     }
   };
   PMC.displayName =

@@ -25,6 +25,7 @@
     "callbag-to-obs": "^1.0.0",
     "tape": "^4.8.0",
     "typescript": "2.8.x",
-    "react-test-renderer": "^16.0.0"
+    "react": "16.2.0",
+    "react-test-renderer": "16.2.0"
   }
 }
