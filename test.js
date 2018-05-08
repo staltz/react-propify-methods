@@ -1,5 +1,5 @@
 const test = require('tape');
-const React = require('React');
+const React = require('react');
 const interval = require('callbag-interval');
 const map = require('callbag-map');
 const pipe = require('callbag-pipe');

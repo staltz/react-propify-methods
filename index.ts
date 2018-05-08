@@ -2,6 +2,7 @@ import {
   Component,
   createElement,
   RefObject,
+  createRef,
   ComponentClass as CClass,
 } from 'react';
 import $$observable from 'symbol-observable';
@@ -17,7 +18,7 @@ export function propifyMethods<P, K extends keyof P, M extends K>(
   const PMC: CClass<any> = class extends Component<any> {
     constructor(props: any) {
       super(props);
-      this.ref = null as any;
+      this.ref = createRef ? createRef() : (null as any);
       this.subscriptions = {};
     }
 
@@ -63,10 +64,17 @@ export function propifyMethods<P, K extends keyof P, M extends K>(
     }
 
     render() {
-      return createElement(Comp, {
-        ...(this.props as any),
-        ref: (r: RefObject<typeof Comp>) => {this.ref = r},
-      }, this.props.children);
+      let ref: any = this.ref;
+      if (!ref) {
+        ref = (r: RefObject<typeof Comp>) => {
+          this.ref = r;
+        };
+      }
+      return createElement(
+        Comp,
+        { ...(this.props as any), ref },
+        this.props.children,
+      );
     }
   };
   PMC.displayName =
