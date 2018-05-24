@@ -67,7 +67,7 @@ export function propifyMethods<P, K extends keyof P, M extends K>(
       let ref: any = this.ref;
       if (!ref) {
         ref = (r: RefObject<typeof Comp>) => {
-          this.ref = r;
+          if (r) this.ref = r;
         };
       }
       return createElement(
