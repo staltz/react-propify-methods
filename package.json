@@ -14,8 +14,8 @@
   "license": "MIT",
   "dependencies": {
     "@types/react": ">=16.2.0",
-    "symbol-observable": "^1.2.0",
-    "react": ">=16.2.0"
+    "react": ">=16.2.0",
+    "symbol-observable": "^1.2.0"
   },
   "devDependencies": {
     "@types/node": "^8.0.30",
@@ -24,9 +24,9 @@
     "callbag-pipe": "^1.1.1",
     "callbag-take": "^1.0.0",
     "callbag-to-obs": "^1.0.0",
-    "tape": "^4.8.0",
-    "typescript": "2.8.x",
     "react": "16.3.0",
-    "react-test-renderer": "16.3.0"
+    "react-test-renderer": "16.3.0",
+    "tape": "^4.8.0",
+    "typescript": "2.8.x"
   }
 }
