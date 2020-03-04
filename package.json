@@ -4,6 +4,7 @@
   "description": "A React utility to convert instance methods to props with Observables",
   "main": "index.js",
   "typings": "index.d.ts",
+  "homepage": "https://github.com/staltz/react-propify-methods",
   "scripts": {
     "compile": "tsc",
     "test": "tsc && tape test.js",
