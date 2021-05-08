@@ -17,8 +17,8 @@
     "react": ">=16.2.0"
   },
   "devDependencies": {
-    "@types/react": "17.0.5",
     "@types/node": "14.x",
+    "@types/react": "17.0.5",
     "callbag-interval": "^1.0.0",
     "callbag-map": "^1.0.1",
     "callbag-pipe": "^1.1.1",
